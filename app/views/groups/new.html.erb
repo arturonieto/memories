@@ -1,0 +1,15 @@
+<div class="new_group">
+	<div class="container">
+		<% if flash[:invalid_group] %>
+		<p class="invalid_group"><%= flash[:invalid_group]%></p>
+		<% end %>
+		<h2>Agrega un nuevo Grupo a la Base de Datos</h2>
+		<%= form_for(@group) do |f| %>
+		<%= f.text_field :university, :required => 'required', :placeholder => 'Universidad' %><br>
+		<%= f.text_field :generation, :required => 'required', :placeholder => 'Generación' %><br>
+		<%= f.text_field :degree, :required => 'required', :placeholder => 'Carrera' %><br>
+		<%= f.text_field :representative, :required => 'required', :placeholder => 'Representante' %><br>
+		<%= f.submit 'Guardar'%>
+		<% end %>
+	</div>
+</div>

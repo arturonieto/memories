@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Memories</title>
+    <%= csrf_meta_tags %>
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Lato" rel="stylesheet">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+  	<div class="header">
+  		<div class="container">
+        <div class="row">
+          <div class="col-md-4 col-xs-6">
+      			<a href="/show"><h1><span style="color: steelblue;">M</span>emorie's</h1></a>           
+          </div>
+          <div class="col-md-8 col-xs-6">
+            <% if current_user %>
+            <ul class="pull-right">
+              <li> <%= current_user.name %></li>
+              <li> <%= link_to 'Salir', logout_path, method: 'delete', class: 'salir' %></li>
+            </ul>
+            <% end %>
+          </div>
+        </div>
+  		</div>
+  	</div>
+
+    <%= yield %>
+
+    <div class="footer">
+    	<div class="container">
+    		<h4>Desarrollado por &copy; Luis Arturo Nieto</h4>
+    	</div>
+    </div>
+
+  </body>
+</html>

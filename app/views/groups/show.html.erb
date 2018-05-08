@@ -1,0 +1,25 @@
+<div class="group_students">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h3 align="center" style="color: black; margin-top: 1.5em;"><span style="color: steelblue;"><%= @group.degree.titleize %></span> <%=@group.representative.titleize %></h3>
+			</div>
+		</div>
+		<div class="row main">
+			<div class="col-md-8">
+				<p class="titulo">Seleccione un graduado para ver o editar su pedido</p>
+				<% @students.each_with_index do |s, index| %>
+				<%= link_to package_path(s) do %>
+				<p class="graduado"><%= index+1 %>.-  <span><%= s.name %></span><span class="pull-right"><%= s.email %></span></p>
+				<% end %>
+				<% end %>
+			</div>
+			<div class="col-md-4 links">
+				<%= link_to 'Agregar Pedido', {controller: 'students', action: 'new'}, :class => 'link' %>
+				<%= link_to 'Generar Hoja de Material', {controller: 'students', action: 'show'}, :class => 'link material' %>
+				<%= link_to 'Mandar Email', {controller: 'students', action: 'email'}, :class => 'link email' %>
+				<%= link_to 'Eliminar Grupo', group_path(@group), method: 'delete', :class => 'link delete', data: {confirm: 'Seguro que desea eliminar el grupo y todos sus graduados?'} %>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,105 @@
+// Place all the styles related to the package controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/*package#index*/
+
+.actualizar_pedido{
+	margin-top: 1em;
+	a{
+		text-decoration: none;
+		color: steelblue;
+	}
+	h2{
+		margin-bottom: 1.5em;
+		text-align: center;
+	}
+	
+	.col-md-12{
+		text-align: center;
+	}
+	
+	input{
+		&[type="text"], &[type="email"]{
+			align: center;
+			background-color: rgba(0,0,0,.1);
+			width: 45%;
+			margin-bottom: .5em;
+			font-size: 1.2em;
+			border-radius: 5px;
+			border: 0px;
+			padding-left: 5px;
+			&.nombre{
+				width: 90.5%;
+			}
+		}
+	}
+	
+	.first{
+		border-top: 3px solid goldenrod;
+		margin-top: 1em;
+	}
+	
+	.main{
+		border-bottom: .5px solid goldenrod;
+		padding-bottom: 1.2em;
+		p{
+			color: black;
+		}
+		input[type=radio]{
+			visibility: hidden;
+			&:checked+label{
+				background-color: black;
+				color: white;
+				}
+			}
+		label{
+			background-color: transparent;
+			color: black;
+			padding: 5px;
+			border-radius: 5px;
+			&:hover{
+				background-color: black;
+				color: white;
+			}
+		}
+		select{
+			width: 75%;
+			border: none;
+			margin-bottom: .5em;
+			font-size: 1.2em;
+		}
+		h5{
+			margin-top: 3.5em;
+			margin-bottom: 1em;
+			font-size: 1.3em;
+		}
+	}
+
+	.last{
+		margin-bottom: 2em;
+		p{
+			color: black;
+		}
+		select{
+			width: 80%;
+			border: none;
+			margin-bottom: .5em;
+			&.tamaño{
+				width: 10%;
+			}
+		}
+	}
+
+	input[type="submit"]{
+		width: 100%;
+		font-size: 1.5em;
+		margin-bottom: 2em;
+		margin-top: 2em;
+		border-radius: 5px;
+		border: none;
+		background-color: green;
+		color: white;
+	}
+}

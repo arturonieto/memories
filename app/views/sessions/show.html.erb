@@ -1,0 +1,26 @@
+<div class="groups">
+	<div class="container">
+		<h2 align="center" style="margin-bottom: 1em; color: black;">Selecione un grupo para mostrar los graduados</h2>
+		<% @groups.each do |g| %>
+		<%= link_to(g) do %>
+		<div class="row">
+			<div class="col-md-3 col-xs-3">
+				<span><%= g.degree.titleize %></span>
+			</div>
+			<div class="col-md-3 col-xs-3">
+				<span><%= g.representative.titleize %></span>
+			</div>
+			<div class="col-md-3 col-xs-3">
+				<span><%= g.generation %></span>
+			</div>
+			<div class="col-md-3 col-xs-3">
+				<span><%= g.university.upcase %></span>
+			</div>
+		</div>
+		<% end %>
+		<% end %>
+		<div style="text-align: center;">
+			<%= link_to 'Nuevo Grupo', {controller: 'groups', action: 'new'}, :class => 'create_group' %>
+		</div>
+	</div>
+</div>

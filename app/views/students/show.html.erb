@@ -1,0 +1,54 @@
+<div class="generar_material">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12" align="center">
+				<table>
+					<tr>
+						<th class="grupo" colspan="2" style="text-align: center; font-size: 1.5em;">Material para <%= @group.degree.titleize %> <%= link_to @group.representative.titleize, show_group_path %></th>
+					</tr>
+					<tr>
+						<th class="de" colspan="2" style="text-align: center; font-size: 1.4em;">Agradecimientos</th>
+					</tr>
+					<tr>
+						<th>Base</th>
+						<th style="text-align: center;">Cantidad</th>
+					</tr>
+					<% @base_agradecimiento.each do |key, value| %>
+					<tr>
+						<td><%= key %></td>
+						<td align="center"><%= value%></td>
+					</tr>
+					<% end %>
+					<tr>
+						<th class="de" colspan="2" style="text-align: center; font-size: 1.4em;">Diplomas</th>
+					</tr>
+					<tr>
+						<th>Base</th>
+						<th style="text-align: center;">Cantidad</th>
+					</tr>
+					<% @base_diploma.each do |key, value| %>
+					<tr>
+						<td><%= key %></td>
+						<td align="center"><%= value%></td>
+					</tr>
+					<% end %>
+					<tr>
+						<th class="de" colspan="2" style="text-align: center; font-size: 1.4em;">Fotografías</th>
+					</tr>
+					<tr>
+						<th>Base</th>
+						<th style="text-align: center;">Cantidad</th>
+					</tr>
+					<% @base_foto.each do |key, value| %>
+					<tr>
+						<td><%= key %></td>
+						<td align="center"><%= value%></td>
+					</tr>
+					<% end %>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+

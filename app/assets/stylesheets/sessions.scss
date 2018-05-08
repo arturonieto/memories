@@ -1,0 +1,76 @@
+// Place all the styles related to the Sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*sessions#new*/
+.session_start{
+	margin-top: 10em;
+	h2{
+		color: black;
+		margin-bottom: 1.5em;
+	}
+	.invalid_login{
+		font-size: 1.3em;
+	}
+	input{
+		width: 70%;
+		margin-top: 1em;
+		border: none;
+		background-color: rgba(0,0,0,.1);
+		height: 2.5em;
+		border-radius: 5px;
+		&.email, &.password{
+			padding-left: 5px;
+			font-size: 1.3em;
+		}
+		&.btn-submit{
+			margin-top: 2em;
+			background-color: transparent;
+			border: 3px solid goldenrod;
+			color: black;
+			transition: .5s;
+			font-size: 1.3em;
+			&:hover{
+				background-color: goldenrod;
+				color: black;
+				transition: .5s;
+			}
+		}						
+	}
+		
+}
+
+/*sessions#show*/
+
+.groups{
+	margin-top: 1em;
+	.row{
+		text-align: center;
+		color: black;
+		padding-bottom: 1em;
+		padding-top: 1em;
+		font-size: 1.3em;
+		border-bottom: 1px solid goldenrod;
+		&:hover{
+			border-bottom: 2.5px solid steelblue;
+			color: steelblue;
+		}
+	}
+	.create_group{
+		text-decoration: none;
+		display: inline-block;
+		width: 60%;
+		text-align: center;
+		color: white;
+		background-color: steelblue;
+		border-radius: 5px;
+		font-size: 2em;
+		margin: auto;
+		margin-top: 2em;
+	}
+}
+
+
+
+
+	

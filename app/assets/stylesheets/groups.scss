@@ -1,0 +1,90 @@
+// Place all the styles related to the groups controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/*groups#new*/
+
+.new_group{
+	margin-top: 2em;
+	input{
+		width: 70%;
+		margin-top: 1em;
+		border: none;
+		height: 2.5em;
+		border-radius: 5px;
+		font-size: 1.7em;
+		background-color: rgba(0,0,0,.1);
+		&[type="text"]{
+			padding-left: 10px;
+		}
+		&[type="submit"]{
+			background-color: steelblue;		
+			color: white;
+		}
+	}
+}
+
+
+/* grouops#show */
+
+.group_students{
+	.main{
+		.titulo{
+			color: black;
+			border-bottom: 1px solid silver;
+			font-size: 1.3em;
+			padding: 0 0 10px 10px;
+			margin-bottom: 1em;
+		}
+		.graduado{
+			padding-left: 10px;
+			color: black;
+			font-size: 1.3em;
+			span{
+				padding-left: 12px;
+				&.pull-right{
+					padding-right: 12px;
+				}
+			}			
+		}
+		margin-top: 2.5em;
+		.links{
+			margin-top: 3em;
+			.link{
+				display: block;
+				text-align: center;
+				text-decoration: none;
+				border-bottom:	2px solid black;
+				
+				color: black;
+				padding-top: 10px;
+				padding-bottom: 10px;
+				font-size: 1.5em;
+				margin-bottom: 1em;
+				&:hover{
+					border-bottom: 2px solid steelblue;
+					color: steelblue;
+				}
+				&.delete{
+					margin-top: 10em;
+					border: 2px solid red;
+					color: red;
+					border-radius: 5px;
+					&:hover{
+						background-color: red;
+						color: white;
+					}
+				}
+			}			
+		}
+	}	
+}
+
+
+
+
+
+
+
+

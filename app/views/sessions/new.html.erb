@@ -1,0 +1,15 @@
+<div class="session_start">
+	<div class="container">
+		<h2>Inicie Sesión para acceder a la base de Datos</h2>
+		<%= form_for(:session, url: login_path) do |f| %>
+		<%= f.email_field :email, :placeholder => 'Email', :class => 'email' %><br>
+		<%= f.password_field :password, :placeholder => 'Password', :class => 'password'%><br>
+		<% if flash[:invalid_login] %>
+		<p class="invalid_login" style="color: red; margin-top: 2em;"><%= flash[:invalid_login]%></p>
+		<% end %>
+		<%= f.submit 'Login', class: 'btn-submit' %>
+		<% end %>
+	</div>  
+</div>
+
+

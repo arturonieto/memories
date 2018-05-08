@@ -1,0 +1,114 @@
+<div class="actualizar_pedido">
+	<div class="container">
+		<h2>Editar pedido de <%= @student.name %> del grupo de <%= link_to @group.representative.titleize, show_group_path %></h2>
+		
+		<%= form_for(@student, url: update_path) do |f| %>
+		
+		<div class="row">
+			<div class="col-md-12">				
+				<span><%= f.text_field :name, :required => 'required', :placeholder => 'Nombre', :class => 'nombre' %><br>
+				<%= f.email_field :email, :required => 'required', :placeholder => 'Email' %>
+				<%= f.text_field :cellphone, :placeholder => 'Celular' %><br></span>
+			</div>
+		</div>
+		
+		<div class="row first main">
+			<div class="col-md-6">
+				<h3>Agradecimiento</h3>
+				<p>Seleccione la base de la Agradecimiento:</p>
+				<%= f.select(:base_agradecimiento, options_for_select(@paquete[:base][:tipo].each do |x| [x] end, selected = @student.base_agradecimiento)) %>			
+				<p>Seleccione el color de la Base:</p>
+				<%= f.select(:base_agradecimiento_color, options_for_select(@paquete[:base][:color].each do |x| [x] end, selected = @student.base_agradecimiento_color)) %>
+				<p>Seleccione el tamaño de la Base:</p>			
+				<%= f.select(:base_agradecimiento_tamaño, options_for_select(@paquete[:base][:tamaño].each do |x| [x] end)) %>
+				<p>Seleccione el fondo de la Base:</p>
+				<%= f.select(:base_agradecimiento_fondo, options_for_select(@paquete[:base][:fondo].each do |x| [x] end)) %>
+				<p>Seleccione si la base es Plana o 3D:</p>
+				<%= f.radio_button :base_agradecimiento_3d, '' %>
+				<%= f.label :base_agradecimiento_3d, 'Plana', :value => '' %>
+				<%= f.radio_button :base_agradecimiento_3d, '3D' %>
+				<%= f.label :base_agradecimiento_3d, '3D', :value => '3D' %>
+			</div>
+			<div class="col-md-6">
+				<h5>Placa Agradecimiento</h5>
+				<p>Seleccione el Tipo de Placa:</p>
+				<%= f.select(:placa_agradecimiento, options_for_select(@paquete[:base][:placa][:tipo].each do |x| [x] end)) %>
+				<p>Seleccione el Color de Placa:</p>
+				<%= f.select(:placa_agradecimiento_color, options_for_select(@paquete[:base][:placa][:color].each do |x| [x] end)) %>
+			</div>
+		</div>
+		
+
+		<div class="row main">
+			<div class="col-md-6">
+				<h3>Diploma</h3>
+				<p>Seleccione la base del Diploma:</p>
+				<%= f.select(:base_diploma, options_for_select(@paquete[:base][:tipo].each do |x| [x] end)) %>			
+				<p>Seleccione el color de la Base:</p>
+				<%= f.select(:base_diploma_color, options_for_select(@paquete[:base][:color].each do |x| [x] end)) %>
+				<p>Seleccione el tamaño de la Base:</p>			
+				<%= f.select(:base_diploma_tamaño, options_for_select(@paquete[:base][:tamaño].each do |x| [x] end)) %>
+				<p>Seleccione el fondo de la Base:</p>
+				<%= f.select(:base_diploma_fondo, options_for_select(@paquete[:base][:fondo].each do |x| [x] end)) %>
+				<p>Seleccione si la base es Plana o 3D:</p>
+				<%= f.radio_button :base_diploma_3d, '' %>
+				<%= f.label :base_diploma_3d, 'Plana', :value => '' %>
+				<%= f.radio_button :base_diploma_3d, '3D' %>
+				<%= f.label :base_diploma_3d, '3D', :value => '3D' %>
+			</div>
+			<div class="col-md-6">
+				<h5>Placa Diploma</h5>
+				<p>Seleccione el Tipo de Placa:</p>
+				<%= f.select(:placa_diploma, options_for_select(@paquete[:base][:placa][:tipo].each do |x| [x] end)) %>
+				<p>Seleccione el Color de Placa:</p>
+				<%= f.select(:placa_diploma_color, options_for_select(@paquete[:base][:placa][:color].each do |x| [x] end)) %>
+			</div>
+		</div>
+
+
+		<div class="row main">
+			<div class="col-md-6">
+				<h3>Fotografía</h3>
+				<p>Seleccione la base de la Fotografía:</p>
+				<%= f.select(:base_foto, options_for_select(@paquete[:base][:tipo].each do |x| [x] end)) %>			
+				<p>Seleccione el color de la Base:</p>
+				<%= f.select(:base_foto_color, options_for_select(@paquete[:base][:color].each do |x| [x] end)) %>
+				<p>Seleccione el tamaño de la Base:</p>			
+				<%= f.select(:base_foto_tamaño, options_for_select(@paquete[:base][:tamaño].each do |x| [x] end)) %>
+				<p>Seleccione el fondo de la Base:</p>
+				<%= f.select(:base_foto_fondo, options_for_select(@paquete[:base][:fondo].each do |x| [x] end)) %>
+				<p>Seleccione si la base es Plana o 3D:</p>
+				<%= f.radio_button :base_foto_3d, '' %>
+				<%= f.label :base_foto_3d, 'Plana', :value => '' %>
+				<%= f.radio_button :base_foto_3d, '3D' %>
+				<%= f.label :base_foto_3d, '3D', :value => '3D' %>
+			</div>
+			<div class="col-md-6">
+				<h5>Placa Fotografía</h5>
+				<p>Seleccione el Tipo de Placa:</p>
+				<%= f.select(:placa_foto, options_for_select(@paquete[:base][:placa][:tipo].each do |x| [x] end)) %>
+				<p>Seleccione el Color de Placa:</p>
+				<%= f.select(:placa_foto_color, options_for_select(@paquete[:base][:placa][:color].each do |x| [x] end)) %>
+			</div>
+		</div>
+
+		
+		<div class="row last">
+			<div class="col-md-10">
+				<h3>Anillo</h3>
+				<p>Seleccione el Modelo de Anillo:</p>
+				<%= f.select(:anillo, options_for_select(@paquete[:anillo][:nombre].each do |x| [x] end)) %></br>
+				<p>Seleccione el Tamaño de Anillo:</p>
+				<%= f.select(:anillo_tamaño, options_for_select(@paquete[:anillo][:tamaño].each do |x| [x] end), {}, {:class => 'tamaño'}) %><br>
+			</div>
+		</div>
+
+
+		<%= f.hidden_field :group_id, :value => @group.id %>
+		<%= f.submit 'Actualizar'%>
+		<% end %>
+	</div>
+</div>
+
+
+
